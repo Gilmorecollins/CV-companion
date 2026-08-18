@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collins Kipkemboi — Software Engineer</title>
-<meta name="description" content="CV of Collins Kipkemboi, Software Engineer based in Eldoret, Kenya.">
+<title>Collins Kipkemboi — Software Engineer </title>
+<meta name="description" content="CV of Collins Kipkemboi, Software Engineer and UX/UI Designer based in Eldoret, Kenya.">
 <script>
   (function(){
     try{
@@ -589,18 +589,19 @@
     align-items:center;
     gap:8px;
     background:var(--ink);
-    color:#fff !important;
+    color:var(--bg) !important;
     padding:11px 20px;
     border-radius:var(--radius);
     font-size:14px;
     font-weight:500;
     text-decoration:none !important;
-    transition:transform .15s ease, background .15s ease;
+    transition:transform .15s ease, background .15s ease, color .15s ease;
   }
 
-  .btn:hover{background:var(--accent);transform:translateY(-1px);}
+  .btn:hover{background:var(--accent);color:#fff !important;transform:translateY(-1px);}
+  .btn:hover svg{stroke:#fff;}
 
-  .btn svg{width:15px;height:15px;stroke:#fff;}
+  .btn svg{width:15px;height:15px;stroke:var(--bg);}
 
   @media (max-width:640px){
     .skills-grid{grid-template-columns:1fr;}
@@ -653,7 +654,7 @@
       </div>
       <div class="hero-contact mono">
         <span>+254-702-138-691</span>
-        <span>Collinskorirpk37.ck@mail.com</span>
+        <span>Collinskorirpk37.ck@gmail.com</span>
         <span>Eldoret, Kenya</span>
       </div>
     </div>
