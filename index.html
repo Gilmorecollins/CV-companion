@@ -5,6 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Collins Kipkemboi — Software Engineer </title>
 <meta name="description" content="CV of Collins Kipkemboi, Software Engineer and UX/UI Designer based in Eldoret, Kenya.">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233D52A0'/%3E%3Cstop offset='1' stop-color='%237091E6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='27' font-weight='700' fill='white' text-anchor='middle'%3ECK%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233D52A0'/%3E%3Cstop offset='1' stop-color='%237091E6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='43' font-family='Arial,Helvetica,sans-serif' font-size='27' font-weight='700' fill='white' text-anchor='middle'%3ECK%3C/text%3E%3C/svg%3E">
+
+<meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B0D12" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Collins Kipkemboi — Software Engineer & UX/UI Designer">
+<meta property="og:description" content="CV of Collins Kipkemboi, Software Engineer and UX/UI Designer based in Eldoret, Kenya.">
+<meta property="og:site_name" content="Collins Kipkemboi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Collins Kipkemboi — Software Engineer & UX/UI Designer">
+<meta name="twitter:description" content="CV of Collins Kipkemboi, Software Engineer and UX/UI Designer based in Eldoret, Kenya.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Collins Kipkemboi",
+  "jobTitle": "Software Engineer & UX/UI Designer",
+  "email": "mailto:Collinskorirpk37.ck@gmail.com",
+  "telephone": "+254-702-138-691",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Eldoret",
+    "addressCountry": "KE"
+  },
+  "sameAs": [
+    "https://github.com/Gilmorecollins",
+    "https://www.linkedin.com/in/collins-kipkemboi-0456a3245"
+  ]
+}
+</script>
+
 <script>
   (function(){
     try{
@@ -13,11 +48,12 @@
     }catch(e){
       document.documentElement.setAttribute('data-theme', 'light');
     }
+    document.documentElement.classList.add('js-anim');
   })();
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#FAFAF7;
@@ -52,14 +88,14 @@
   body{
     background:var(--bg);
     color:var(--ink);
-    font-family:'Inter',sans-serif;
+    font-family:'Manrope',sans-serif;
     line-height:1.6;
     -webkit-font-smoothing:antialiased;
     transition:background-color .3s ease, color .3s ease;
   }
 
   h1,h2,h3{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:'Manrope',sans-serif;
     letter-spacing:-0.01em;
   }
 
@@ -97,7 +133,11 @@
     z-index:50;
     background:var(--bg);
     border-bottom:1px solid var(--line);
-    transition:background-color .3s ease, border-color .3s ease;
+    transition:background-color .3s ease, border-color .3s ease, box-shadow .25s ease;
+  }
+
+  nav.scrolled{
+    box-shadow:0 8px 24px -18px rgba(0,0,0,0.5);
   }
 
   .nav-inner{
@@ -108,7 +148,7 @@
   }
 
   .logo{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:'Manrope',sans-serif;
     font-weight:700;
     font-size:19px;
     color:var(--ink) !important;
@@ -128,6 +168,51 @@
   }
 
   .nav-links a:hover{color:var(--accent) !important;}
+
+  .nav-actions{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    flex-shrink:0;
+  }
+
+  .nav-toggle{
+    display:none;
+    width:38px;height:38px;
+    border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--surface);
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    transition:border-color .2s ease, background-color .3s ease;
+    flex-shrink:0;
+  }
+
+  .nav-toggle:hover{border-color:var(--accent);}
+  .nav-toggle svg{width:17px;height:17px;stroke:var(--ink);}
+  .nav-toggle .icon-close{display:none;}
+  nav.menu-open .nav-toggle .icon-menu{display:none;}
+  nav.menu-open .nav-toggle .icon-close{display:block;}
+
+  .mobile-nav{
+    display:none;
+    flex-direction:column;
+    border-top:1px solid var(--line);
+    padding:6px 0 16px;
+  }
+
+  .mobile-nav a{
+    padding:13px 4px;
+    color:var(--ink-soft) !important;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none !important;
+    border-bottom:1px solid var(--line);
+  }
+
+  .mobile-nav a:last-child{border-bottom:none;}
+  .mobile-nav a:hover{color:var(--accent) !important;}
 
   .theme-toggle{
     width:38px;height:38px;
@@ -152,6 +237,8 @@
 
   @media (max-width:640px){
     .nav-links{display:none;}
+    .nav-toggle{display:flex;}
+    nav.menu-open .mobile-nav{display:flex;}
   }
 
   /* ---------- HERO ---------- */
@@ -201,10 +288,45 @@
   .swoosh{
     position:absolute;
     left:2%;
-    bottom:-14px;
+    bottom:-22px;
     width:96%;
     height:18px;
     overflow:visible;
+  }
+
+  /* ---------- HERO ENTRANCE ---------- */
+
+  .js-anim .hero .eyebrow,
+  .js-anim .hero-text h1,
+  .js-anim .hero-lede,
+  .js-anim .hero-badge,
+  .js-anim .hero-actions,
+  .js-anim .hero-contact,
+  .js-anim .hero-photo{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .6s cubic-bezier(.16,1,.3,1), transform .6s cubic-bezier(.16,1,.3,1);
+  }
+
+  .js-anim .hero-photo{transform:translateY(18px) scale(.96);}
+
+  .js-anim.hero-play .hero .eyebrow{opacity:1;transform:none;transition-delay:.05s;}
+  .js-anim.hero-play .hero-text h1{opacity:1;transform:none;transition-delay:.15s;}
+  .js-anim.hero-play .hero-lede{opacity:1;transform:none;transition-delay:.28s;}
+  .js-anim.hero-play .hero-badge{opacity:1;transform:none;transition-delay:.4s;}
+  .js-anim.hero-play .hero-actions{opacity:1;transform:none;transition-delay:.5s;}
+  .js-anim.hero-play .hero-contact{opacity:1;transform:none;transition-delay:.6s;}
+  .js-anim.hero-play .hero-photo{opacity:1;transform:none;transition-delay:.3s;}
+
+  .js-anim .swoosh path{
+    stroke-dasharray:1;
+    stroke-dashoffset:1;
+    transition:stroke-dashoffset .9s cubic-bezier(.65,0,.35,1);
+  }
+
+  .js-anim.hero-play .swoosh path{
+    stroke-dashoffset:0;
+    transition-delay:.75s;
   }
 
   .hero-lede{
@@ -340,7 +462,7 @@
   .stat-icon svg{width:18px;height:18px;stroke:var(--accent);}
 
   .stat-value{
-    font-family:'Space Grotesk',sans-serif;
+    font-family:'Manrope',sans-serif;
     font-size:19px;
     font-weight:700;
     line-height:1.15;
@@ -424,6 +546,60 @@
   @media (max-width:760px){
     .whatido-grid{grid-template-columns:1fr;}
   }
+
+  /* ---------- PROJECTS ---------- */
+
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+    gap:20px;
+  }
+
+  .project-card{
+    display:flex;
+    flex-direction:column;
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+
+  .project-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+
+  .project-card .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--ink-faint);
+    margin-bottom:10px;
+  }
+
+  .project-card h3{
+    font-size:16px;
+    font-weight:600;
+    margin-bottom:8px;
+  }
+
+  .project-card p{
+    font-size:14px;
+    color:var(--ink-soft);
+    line-height:1.55;
+    flex-grow:1;
+  }
+
+  .project-card .project-link{
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+    margin-top:16px;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--accent) !important;
+    text-decoration:none !important;
+  }
+
+  .project-card .project-link svg{width:14px;height:14px;stroke:currentColor;}
+  .project-card .project-link:hover{text-decoration:underline !important;}
 
   .hero-photo{
     position:relative;
@@ -647,6 +823,43 @@
 
   @media (prefers-reduced-motion: reduce){
     .skill-item{opacity:1;transform:none;transition:none;}
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+
+  .reveal{
+    opacity:0;
+    transform:translateY(22px);
+    transition:opacity .6s ease, transform .6s ease;
+  }
+
+  .reveal.in-view{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .reveal-group .reveal-item{
+    opacity:0;
+    transform:translateY(18px);
+    transition:opacity .55s ease, transform .55s ease;
+  }
+
+  .reveal-group.in-view .reveal-item{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  .reveal-group.in-view .reveal-item:nth-child(1){transition-delay:0ms;}
+  .reveal-group.in-view .reveal-item:nth-child(2){transition-delay:90ms;}
+  .reveal-group.in-view .reveal-item:nth-child(3){transition-delay:180ms;}
+  .reveal-group.in-view .reveal-item:nth-child(4){transition-delay:270ms;}
+  .reveal-group.in-view .reveal-item:nth-child(5){transition-delay:360ms;}
+  .reveal-group.in-view .reveal-item:nth-child(6){transition-delay:450ms;}
+  .reveal-group.in-view .reveal-item:nth-child(7){transition-delay:540ms;}
+  .reveal-group.in-view .reveal-item:nth-child(8){transition-delay:630ms;}
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-item{opacity:1 !important;transform:none !important;transition:none !important;}
   }
 
   /* ---------- EDUCATION / CERTS ---------- */
@@ -897,13 +1110,30 @@
       <a href="#profile">Profile</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
     </div>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
+        <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="wrap-wide">
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#profile">Profile</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
 </nav>
 
@@ -912,15 +1142,15 @@
     <div class="hero-text">
       <div class="eyebrow">
         <svg viewBox="0 0 24 24" stroke="none"><path d="M13 2 3 14h7l-1 8 11-14h-7l1-6z"/></svg>
-        Software Engineering &nbsp;•&nbsp; UX/UI Design &nbsp;•&nbsp; System Analyst
+        Software Engineering &nbsp;•&nbsp; UX/UI Design &nbsp;•&nbsp; ICT Support
       </div>
-      <h1>I turn ideas into<br><span class="grad-underline"><span class="grad-text">digital experiences</span><svg class="swoosh" viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M5 15 Q150 -8 295 15" fill="none" stroke-width="5" stroke-linecap="round" style="stroke:var(--accent2)"/></svg></span></h1>
+      <h1>I turn ideas into<br><span class="grad-underline"><span class="grad-text">digital experiences</span><svg class="swoosh" viewBox="0 0 300 20" preserveAspectRatio="none"><path d="M5 14 Q150 5 295 14" pathLength="1" fill="none" stroke-width="4" stroke-linecap="round" style="stroke:var(--accent2)"/></svg></span></h1>
       <div class="hero-lede">
         <p>Software engineer. UI/UX designer. <strong>Problem solver.</strong></p>
         <p>I build <span class="hl">fast</span>, <span class="hl">reliable</span>, and <span class="hl-accent">user-friendly</span> digital experiences — spanning ICT support, web development, and banking customer experience.</p>
       </div>
       <div class="hero-badge">
-        <span></span>
+        <span>🚀</span>
         Currently creating impact in customer experience at <strong>KCB Bank</strong>.
       </div>
       <div class="hero-actions">
@@ -943,29 +1173,29 @@
   </div>
 
   <div class="wrap-wide">
-    <div class="stats-bar">
-      <div class="stat-item">
+    <div class="stats-bar reveal-group">
+      <div class="stat-item reveal-item">
         <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div>
           <div class="stat-value">4+</div>
           <div class="stat-label">Years Experience</div>
         </div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item reveal-item">
         <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
         <div>
           <div class="stat-value">5</div>
           <div class="stat-label">Organizations</div>
         </div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item reveal-item">
         <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
         <div>
           <div class="stat-value">3</div>
           <div class="stat-label">Languages</div>
         </div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item reveal-item">
         <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
         <div>
           <div class="stat-value">Problem Solver</div>
@@ -980,18 +1210,18 @@
   <div class="wrap-wide">
     <div class="eyebrow">What I Do</div>
     <h2>Turning ideas into reliable, well-designed digital solutions.</h2>
-    <div class="whatido-grid">
-      <div class="whatido-card">
+    <div class="whatido-grid reveal-group">
+      <div class="whatido-card reveal-item">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
         <h3>Software Engineering</h3>
         <p>Building and maintaining web-based platforms, troubleshooting systems, and writing clean, reliable code across HTML, CSS, PHP, and JavaScript.</p>
       </div>
-      <div class="whatido-card">
+      <div class="whatido-card reveal-item">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></div>
         <h3>UI/UX Design</h3>
         <p>Designing user-friendly interfaces through research, wireframing, prototyping, and user testing — from Figma concepts to polished visuals.</p>
       </div>
-      <div class="whatido-card">
+      <div class="whatido-card reveal-item">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg></div>
         <h3>ICT Support</h3>
         <p>Systems and network administration, data security compliance, and hands-on technical support and training for staff and end users.</p>
@@ -1003,18 +1233,18 @@
 <div class="wrap">
 
   <section id="profile">
-    <div class="section-head"><span class="idx mono">01</span><h2>Profile</h2></div>
-    <div class="lede">
+    <div class="section-head reveal"><span class="idx mono">01</span><h2>Profile</h2></div>
+    <div class="lede reveal">
       <p>As a software engineer and UX/UI designer, my passion lies in creating digital experiences that are engaging and satisfying for users. I use a combination of design thinking, research, and strategic planning to tackle complex challenges and build user-friendly interfaces that increase engagement and conversions.</p>
       <p>My strengths span user research, wireframing, prototyping, user testing, and visual design — sharpened through close collaboration with product managers, developers, and marketers to ship successful digital products. I keep a close eye on design trends and technological advancements, and enjoy fast-paced environments where I can apply creative, hands-on problem-solving.</p>
     </div>
   </section>
 
   <section id="experience">
-    <div class="section-head"><span class="idx mono">02</span><h2>Experience</h2></div>
-    <div class="log">
+    <div class="section-head reveal"><span class="idx mono">02</span><h2>Experience</h2></div>
+    <div class="log reveal-group">
 
-      <div class="entry">
+      <div class="entry reveal-item">
         <div class="entry-meta">August 2026 — Present</div>
         <h3>Bank Officer — Customer Experience, Contact Centre</h3>
         <div class="org">KCB Bank</div>
@@ -1027,7 +1257,7 @@
         </ul>
       </div>
 
-      <div class="entry">
+      <div class="entry reveal-item">
         <div class="entry-meta">January 2025 — July 2026</div>
         <h3>Information Technology &amp; Communication — Support</h3>
         <div class="org">Studies and Awards Limited</div>
@@ -1040,7 +1270,7 @@
         </ul>
       </div>
 
-      <div class="entry">
+      <div class="entry reveal-item">
         <div class="entry-meta">January 2023 — December 2024</div>
         <h3>Information Technology &amp; Communication — Intern</h3>
         <div class="org">Kenya Revenue Authority</div>
@@ -1054,7 +1284,7 @@
         </ul>
       </div>
 
-      <div class="entry">
+      <div class="entry reveal-item">
         <div class="entry-meta">August 2022 — January 2023</div>
         <h3>ICT Support Assistant</h3>
         <div class="org">Creative Bikrop Ventures Limited</div>
@@ -1066,7 +1296,7 @@
         </ul>
       </div>
 
-      <div class="entry">
+      <div class="entry reveal-item">
         <div class="entry-meta">May 2022 — July 2022</div>
         <h3>Software Engineer Attaché</h3>
         <div class="org">USAID AMPATH Uzima</div>
@@ -1118,10 +1348,64 @@
     </div>
   </section>
 
+  <section id="projects">
+    <div class="section-head reveal"><span class="idx mono">04</span><h2>Projects</h2></div>
+    <div class="lede reveal" style="margin-bottom:26px;">
+      <p>A selection of systems and websites I've built, spanning enterprise internal tools, service platforms, and client-facing sites.</p>
+    </div>
+    <div class="project-grid reveal-group">
+      <div class="project-card reveal-item">
+        <div class="num mono">01</div>
+        <h3>Ditman Construction Limited Website</h3>
+        <p>Company website for a construction firm, showcasing services and completed projects with a client-facing, responsive design.</p>
+        <a class="project-link" href="https://github.com/Gilmorecollins" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="project-card reveal-item">
+        <div class="num mono">02</div>
+        <h3>KRA Asset Management System</h3>
+        <p>Internal system for tracking and managing organizational assets, built to support digital transformation and ICT operations.</p>
+        <a class="project-link" href="https://github.com/Gilmorecollins" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="project-card reveal-item">
+        <div class="num mono">03</div>
+        <h3>Garbage Collection System</h3>
+        <p>Web application for scheduling and managing waste collection logistics and routes.</p>
+        <a class="project-link" href="https://github.com/Gilmorecollins" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="project-card reveal-item">
+        <div class="num mono">04</div>
+        <h3>Computer Online Service Website</h3>
+        <p>Platform for booking and managing computer repair and IT support services online.</p>
+        <a class="project-link" href="https://github.com/Gilmorecollins" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="project-card reveal-item">
+        <div class="num mono">05</div>
+        <h3>Responsive Portfolio</h3>
+        <p>A fully responsive personal portfolio template, demonstrating adaptive layouts and UI design across device sizes.</p>
+        <a class="project-link" href="https://github.com/Gilmorecollins" target="_blank" rel="noopener">
+          View on GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="education">
-    <div class="section-head"><span class="idx mono">04</span><h2>Education &amp; Certifications</h2></div>
-    <div class="cred-grid">
-      <div class="cred-col">
+    <div class="section-head reveal"><span class="idx mono">05</span><h2>Education &amp; Certifications</h2></div>
+    <div class="cred-grid reveal-group">
+      <div class="cred-col reveal-item">
         <h3>Awards</h3>
         <div class="cred">
           <div class="title">B.Sc. Software Engineering (BSSE)</div>
@@ -1129,7 +1413,7 @@
           <div class="when">2018 — 2022</div>
         </div>
       </div>
-      <div class="cred-col">
+      <div class="cred-col reveal-item">
         <h3>Certifications</h3>
         <div class="cred">
           <div class="title">International Computer Driving License (ICDL)</div>
@@ -1151,29 +1435,29 @@
   </section>
 
   <section id="languages">
-    <div class="section-head"><span class="idx mono">05</span><h2>Languages</h2></div>
-    <div class="lang-row">
-      <div class="lang-chip">Kalenjin <span class="lvl">native</span></div>
-      <div class="lang-chip">Kiswahili <span class="lvl">conversational</span></div>
-      <div class="lang-chip">English <span class="lvl">fluent</span></div>
+    <div class="section-head reveal"><span class="idx mono">06</span><h2>Languages</h2></div>
+    <div class="lang-row reveal-group">
+      <div class="lang-chip reveal-item">Kalenjin <span class="lvl">native</span></div>
+      <div class="lang-chip reveal-item">Kiswahili <span class="lvl">conversational</span></div>
+      <div class="lang-chip reveal-item">English <span class="lvl">fluent</span></div>
     </div>
   </section>
 
   <section id="references">
-    <div class="section-head"><span class="idx mono">06</span><h2>References</h2></div>
-    <div class="ref-note">
+    <div class="section-head reveal"><span class="idx mono">07</span><h2>References</h2></div>
+    <div class="ref-note reveal">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-      Available on request.
+      References from KCB Bank, Studies and Awards Limited, and Kenya Revenue Authority available on request.
     </div>
   </section>
 
-  <footer id="contact">
+  <footer id="contact" class="reveal">
     <div class="meta">Eldoret, Kenya · Updated 2026</div>
     <div class="footer-actions">
       <div class="social-links">
         <a href="https://github.com/Gilmorecollins" title="GitHub" aria-label="GitHub" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></a>
         <a href="https://www.linkedin.com/in/collins-kipkemboi-0456a3245" title="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
-        <a href="#" title="Add your portfolio link" aria-label="Portfolio"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></a>
+        <a href="#projects" title="Projects" aria-label="Projects"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></a>
       </div>
       <a class="btn" href="mailto:Collinskorirpk37.ck@gmail.com">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
@@ -1196,6 +1480,7 @@
     var wait = Math.max(minDisplay - elapsed, 0);
     setTimeout(function(){
       loader.classList.add('is-hidden');
+      document.documentElement.classList.add('hero-play');
       setTimeout(function(){
         if(loader.parentNode) loader.parentNode.removeChild(loader);
       }, 500);
@@ -1213,6 +1498,28 @@
 
 <script>
 (function(){
+  var targets = document.querySelectorAll('.reveal, .reveal-group');
+  if(!targets.length) return;
+
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+
+    targets.forEach(function(el){ observer.observe(el); });
+  } else {
+    targets.forEach(function(el){ el.classList.add('in-view'); });
+  }
+})();
+</script>
+
+<script>
+(function(){
   var toggle = document.getElementById('themeToggle');
   if(!toggle) return;
   toggle.addEventListener('click', function(){
@@ -1220,6 +1527,37 @@
     var next = current === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
     try{ localStorage.setItem('ck-theme', next); }catch(e){}
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('nav');
+  var navToggle = document.getElementById('navToggle');
+  var mobileNav = document.getElementById('mobileNav');
+  if(!nav || !navToggle || !mobileNav) return;
+
+  function closeMenu(){
+    nav.classList.remove('menu-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  navToggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('menu-open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  Array.prototype.slice.call(mobileNav.querySelectorAll('a')).forEach(function(a){
+    a.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeMenu();
+  });
+
+  window.addEventListener('resize', function(){
+    if(window.innerWidth > 640) closeMenu();
   });
 })();
 </script>
@@ -1269,6 +1607,77 @@
   } else {
     revealSkills();
   }
+})();
+</script>
+
+<script>
+(function(){
+  var bar = document.querySelector('.stats-bar');
+  if(!bar) return;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var values = Array.prototype.slice.call(bar.querySelectorAll('.stat-value'));
+  var played = false;
+
+  function animateCount(el, target, suffix, duration){
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function playCounts(){
+    if(reduceMotion) return;
+    values.forEach(function(el, i){
+      var match = el.textContent.match(/^(\d+)(.*)$/);
+      if(!match) return;
+      var target = parseInt(match[1], 10);
+      var suffix = match[2];
+      el.textContent = '0' + suffix;
+      setTimeout(function(){
+        animateCount(el, target, suffix, 900);
+      }, i * 120);
+    });
+  }
+
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !played){
+          played = true;
+          playCounts();
+          observer.disconnect();
+        }
+      });
+    }, {threshold:0.4});
+    observer.observe(bar);
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var nav = document.querySelector('nav');
+  if(!nav) return;
+  var ticking = false;
+
+  function update(){
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, {passive:true});
+
+  update();
 })();
 </script>
 </body>
