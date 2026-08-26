@@ -687,6 +687,20 @@
 
   .lede p + p{margin-top:14px;}
 
+  .type-cursor{
+    display:inline-block;
+    width:2px;
+    height:1em;
+    margin-left:1px;
+    background:var(--accent);
+    vertical-align:-2px;
+    animation:typeBlink .8s steps(1) infinite;
+  }
+  @keyframes typeBlink{ 50%{ opacity:0; } }
+  @media (prefers-reduced-motion: reduce){
+    .type-cursor{ display:none; }
+  }
+
   /* ---------- EXPERIENCE : commit-log timeline ---------- */
 
   .log{
@@ -1240,8 +1254,9 @@
   <section id="profile">
     <div class="section-head reveal"><span class="idx mono">01</span><h2>Profile</h2></div>
     <div class="lede reveal">
-      <p>As a software engineer and UX/UI designer, my passion lies in creating digital experiences that are engaging and satisfying for users. I use a combination of design thinking, research, and strategic planning to tackle complex challenges and build user-friendly interfaces that increase engagement and conversions.</p>
-      <p>My strengths span user research, wireframing, prototyping, user testing, and visual design — sharpened through close collaboration with product managers, developers, and marketers to ship successful digital products. I keep a close eye on design trends and technological advancements, and enjoy fast-paced environments where I can apply creative, hands-on problem-solving.</p>
+      <p class="type-line">Software Engineer, Systems Analyst, and UX/UI Designer with a passion for transforming complex business challenges into innovative digital solutions. I bridge the gap between strategy, technology, and user experience combining analytical thinking, technical expertise, and design excellence to create products that are intuitive, scalable, and impactful.</p>
+      <p class="type-line">With a strong foundation in systems analysis, software engineering, and human-centered design, I excel at translating business requirements into high-performing digital experiences that drive efficiency, engagement, and measurable results. My expertise spans requirements gathering, process optimization, solution architecture, user research, interface design, prototyping, and full-cycle product development.</p>
+      <p class="type-line">I am driven by a commitment to excellence, continuous innovation, and delivering technology that not only meets business objectives but creates lasting value for users. Adept at collaborating with cross-functional teams, I thrive in dynamic environments where strategic thinking, problem-solving, and execution are essential to success.</p>
     </div>
   </section>
 
@@ -1620,6 +1635,69 @@
     observer.observe(section);
   } else {
     revealSkills();
+  }
+})();
+</script>
+
+<script>
+(function(){
+  var section = document.getElementById('profile');
+  var lines = section ? Array.prototype.slice.call(section.querySelectorAll('.type-line')) : [];
+  if(!section || !lines.length) return;
+
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fullTexts = lines.map(function(p){ return p.textContent; });
+  lines.forEach(function(p){ p.textContent = ''; });
+
+  if(reduceMotion){
+    lines.forEach(function(p, i){ p.textContent = fullTexts[i]; });
+    return;
+  }
+
+  var played = false;
+
+  function typeSequence(){
+    var lineIndex = 0;
+    var charIndex = 0;
+    var cursor = document.createElement('span');
+    cursor.className = 'type-cursor';
+
+    function step(){
+      if(lineIndex >= lines.length){
+        if(cursor.parentNode) cursor.parentNode.removeChild(cursor);
+        return;
+      }
+      var p = lines[lineIndex];
+      var text = fullTexts[lineIndex];
+
+      if(charIndex === 0) p.appendChild(cursor);
+
+      if(charIndex < text.length){
+        cursor.insertAdjacentText('beforebegin', text.charAt(charIndex));
+        charIndex++;
+        setTimeout(step, 12 + Math.random() * 10);
+      } else {
+        lineIndex++;
+        charIndex = 0;
+        setTimeout(step, 220);
+      }
+    }
+    step();
+  }
+
+  if('IntersectionObserver' in window){
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting && !played){
+          played = true;
+          typeSequence();
+          observer.disconnect();
+        }
+      });
+    }, {threshold:0.25, rootMargin:'0px 0px -40px 0px'});
+    observer.observe(section);
+  } else {
+    lines.forEach(function(p, i){ p.textContent = fullTexts[i]; });
   }
 })();
 </script>
