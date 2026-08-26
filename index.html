@@ -67,6 +67,9 @@
     --line:#E4E4E0;
     --radius:10px;
     --grad: linear-gradient(90deg, var(--accent), var(--accent2));
+    --glass-tint:rgba(178,213,229,.4);
+    --glass-border:rgba(255,255,255,.6);
+    --glass-shadow:rgba(61,82,130,.16);
   }
 
   :root[data-theme="dark"]{
@@ -79,6 +82,9 @@
     --accent2:#ADBBDA;
     --accent-soft:rgba(112,145,230,0.16);
     --line:#232733;
+    --glass-tint:rgba(105,158,190,.14);
+    --glass-border:rgba(255,255,255,.08);
+    --glass-shadow:rgba(0,0,0,.4);
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -512,14 +518,17 @@
   }
 
   .whatido-card{
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:14px;
+    background:var(--glass-tint);
+    border:1px solid var(--glass-border);
+    border-radius:18px;
     padding:24px;
-    transition:border-color .2s ease, transform .2s ease;
+    box-shadow:0 10px 28px var(--glass-shadow);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
 
-  .whatido-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .whatido-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 32px var(--glass-shadow);}
 
   .whatido-card .icon{
     width:42px;height:42px;
@@ -558,14 +567,17 @@
   .project-card{
     display:flex;
     flex-direction:column;
-    background:var(--surface);
-    border:1px solid var(--line);
-    border-radius:14px;
+    background:var(--glass-tint);
+    border:1px solid var(--glass-border);
+    border-radius:18px;
     padding:22px;
-    transition:border-color .2s ease, transform .2s ease;
+    box-shadow:0 10px 28px var(--glass-shadow);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    transition:border-color .2s ease, transform .2s ease, box-shadow .2s ease;
   }
 
-  .project-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .project-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 14px 32px var(--glass-shadow);}
 
   .project-card .num{
     font-family:'JetBrains Mono',monospace;
